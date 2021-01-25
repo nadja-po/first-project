@@ -2,6 +2,16 @@
 /*font-family: 'Montserrat', sans-serif;
 font-family: 'Pacifico', cursive;
 font-family: 'Poppins', sans-serif;*/
+*,*:before, *:after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
 .container {
     max-width: 1180px;
     margin: 0px auto;
@@ -15,7 +25,7 @@ z-index: 50;
 /*height: 70px;
 overflow: hidden;*/
 position: fixed; 
-background-color: antiquewhite;   
+background-color: white;   
 
 }
 .header:before {
@@ -25,7 +35,7 @@ background-color: antiquewhite;
     top: 0;
     left: 0;
     position: absolute; 
-    background-color:aquamarine; 
+    background-color:white; 
     z-index: 2;
     }
 .header_logo {
@@ -33,12 +43,36 @@ background-color: antiquewhite;
     position: relative;
     z-index: 4;
 }
+.header_cart {
+    flex: 0 0 40px;
+    float: right;
+    z-index: 4;
+    display: flex;
+    border-right: 2px solid black;
+    margin-right: 15px;
+}
+.button_cart {
+    background-color: white;
+    width: 25px;
+    height: 25px;
+}
+.header_cart img {
+    width: 25px;
+    height: 25px;
+    padding-right: 5px;
+    background-color: white;
+}
+.header_cart h5 {
+    padding: 3px 10px 0px 5px;
+}
 #renome {
     margin-left: 10px;
+    margin-bottom: 10px;
     font-family: 'Pacifico', cursive;
     font-weight: 200;
     color:black;
     z-index: 5;
+
 }
 .header_body {
   position: relative; 
@@ -46,6 +80,11 @@ background-color: antiquewhite;
   justify-content: space-between;
   height: 80px;
   align-items: center;
+}
+.container_menu {
+  position: relative; 
+  display: flex;
+  
 }
 .header_burger {
     display: none;
@@ -57,6 +96,7 @@ background-color: antiquewhite;
     display: flex;  
     position: relative;
     z-index: 2;
+    padding: 0px 15px 0px 0px;
 }
 .header_list li {
     list-style: none;
@@ -70,12 +110,18 @@ background-color: antiquewhite;
    font-family: 'Montserrat', sans-serif;
    font-weight:bolder;
 }
+.content {
+    padding: 100px 0px 0px 0px;
+}
 @media (max-width: 767px){
     .header_body {
         height: 50px;
     }
     .header_logo {
         flex: 0 0 40px;
+    }
+    .header_cart {
+       
     }
     .header_burger {
         display: block;
@@ -125,13 +171,13 @@ background-color: antiquewhite;
         left: 0;
         width: 100%;
         height: 100%;
-        padding: 70px 10px 20px 0px;
+        padding: 70px 10px 20px 10px;
         background-color: white;
         transition: all 0.3s ease 0s;
+        overflow: auto;
     }
     .header_menu.active {
         top: 0;
-        
     }
     .header_list {
         display: block;
@@ -142,6 +188,12 @@ background-color: antiquewhite;
         border-top: 2px solid lightgray;
         padding-top: 10px;
         padding-left: 10px;
+    }
+    body.lock {
+        overflow: hidden;
+    }
+    .content {
+        padding: 70px 0px 0px 0px;
     }
 }
 
