@@ -4,3 +4,6 @@ document.getElementById('header_burger').onclick = function() {
     document.getElementById('header_menu').classList.toggle('active');
     document.getElementById('body').classList.toggle('lock');
 }
+document.getElementById('cart').onclick = function() {
+    document.getElementById('cart_list').classList.toggle('active');
+}
