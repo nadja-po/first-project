@@ -1,9 +1,17 @@
 "use strict";
-document.getElementById('header_burger').onclick = function() {
-    document.getElementById('header_burger').classList.toggle('active');
-    document.getElementById('header_menu').classList.toggle('active');
-    document.getElementById('body').classList.toggle('lock');
-}
-document.getElementById('cart').onclick = function() {
-    document.getElementById('cart_list').classList.toggle('active');
-}
+
+let burgerElem = document.getElementById('header_burger');
+let cartElem = document.getElementById('cart');
+let menuElem = document.getElementById('header_menu');
+let bodyElem = document.getElementById('body');
+let cartListElem = document.getElementById('cart_list');
+
+burgerElem.addEventListener('click', function (event) {
+    burgerElem.classList.toggle('active');
+    menuElem.classList.toggle('active');
+    bodyElem.classList.toggle('lock');
+});
+
+cartElem.addEventListener('click', function (event) {
+    cartListElem.classList.toggle('active');
+})
