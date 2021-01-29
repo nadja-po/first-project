@@ -6,6 +6,7 @@ let menuElem = document.getElementById('header_menu');
 let bodyElem = document.getElementById('body');
 let cartListElem = document.getElementById('cart_list');
 
+
 burgerElem.addEventListener('click', function (event) {
     burgerElem.classList.toggle('active');
     menuElem.classList.toggle('active');
@@ -14,4 +15,7 @@ burgerElem.addEventListener('click', function (event) {
 
 cartElem.addEventListener('click', function (event) {
     cartListElem.classList.toggle('active');
-})
+});
+
+
+

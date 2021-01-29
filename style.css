@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Pacifico&family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Pacifico&family=Poppins:wght@700&display=swap');
 /*font-family: 'Montserrat', sans-serif;
 font-family: 'Pacifico', cursive;
 font-family: 'Poppins', sans-serif;*/
@@ -47,7 +47,7 @@ html, body {
     z-index: 4;
     display: flex;
     border-right: 2px solid #000000;
-    margin-right: 15px;
+    margin-right: 10px;
 }
 .header__basket {
     background-color: #ffffff;
@@ -64,7 +64,7 @@ html, body {
     padding: 3px 10px 0 5px;
 }
 .logo__text {
-    margin: 0 0 10px 10px;
+    margin: 0 5px 10px 10px;
     font-family: 'Pacifico', cursive;
     font-weight: 200;
     color: #000000;
@@ -88,7 +88,7 @@ html, body {
     display: flex;  
     position: relative;
     z-index: 2;
-    padding: 0 15px 0 0;
+    padding: 0 5px 0 0;
 }
 .header__cartlist {
     display: none;
@@ -114,24 +114,43 @@ html, body {
 }
 .header__link {
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 11px;
+    letter-spacing: 1px;
     text-decoration: none;
     color: #000000;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+}
+.header__link:hover {
+    color: #a0522d;
 }
 .header__cartlink {
     font-size: 12px;
-    text-decoration: none;
+    text-decoration: none;  
     color: #000000;
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     text-align: center;
- }
+}
+.header__cartlink:hover {
+    color: #a0522d;
+}
+.form-search {
+    display: block;
+}
+.form-search input {
+    all: unset;
+    font-size: 10px;
+    letter-spacing: 2px;
+    width: 80%;
+}
+.form-search input[type="image"] {
+    width: 15px;
+    height: 15px;
+}
 .content {
     padding: 100px 0 0;
 }
-@media (max-width: 767px){
+@media (max-width: 830px){
     .header__body {
         height: 50px;
     }
@@ -205,8 +224,19 @@ html, body {
         padding-top: 10px;
         padding-left: 10px;
     }
+    .header__list li:first-child {
+        border-top: 0px;
+    }
     body.lock {
         overflow: hidden;
+    }
+    .form-search input {
+        font-size: 12px;
+        width: 90%;
+    }
+    .form-search input[type="image"] {
+        width: 15px;
+        height: 15px;
     }
     .content {
         padding: 70px 0 0;
