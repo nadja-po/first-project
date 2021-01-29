@@ -106,6 +106,7 @@ html, body {
 .header__list li {
     list-style: none;
     margin: 0 0 0 10px;
+    position: relative;
 }
 .header__cartlist li {
     list-style: none;
@@ -147,10 +148,38 @@ html, body {
     width: 15px;
     height: 15px;
 }
+.header__subnav {
+    display: none;
+}
+.header__subnav.active {
+    display: block;  
+    position: absolute;
+    left: -20px;
+    z-index: 2;
+    padding: 10px 10px 10px;
+    width: 110px;
+    height: 125px;
+    background-color: #ffffff;
+}
+.header__sublink {
+    font-size: 12px;
+    text-decoration: none;  
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.header__subnav li {
+    list-style: none;
+    margin: 10px;
+}
+.header__sublink:hover {
+    color: #a0522d;
+}
 .content {
     padding: 100px 0 0;
 }
-@media (max-width: 830px){
+@media (max-width: 838px){
     .header__body {
         height: 50px;
     }
