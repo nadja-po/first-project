@@ -35,7 +35,7 @@
                             <span></span>
                         </div>
                         <nav class="header__menu" id="header_menu">
-                            <ul class="header__list">
+                            <ul class="header__list" id="header_list">
                                 <li>
                                     <form action="/search/" target="_blank" class="form-search">
                                         <input type="hidden" name="g">
@@ -59,8 +59,20 @@
                                     <a href="#" class="header__link">blog</a>
                                 </li>
                                 <li>
-                                    <a class="header__link" id="header_features">features</a>
+                                    <a class="header__link" id="submenu">
+                                        features</a>
+                                        <button class="header__linkbutton" id="button_submenu">
+                                            <i class="arrow_right"></i>
+                                        </button>
+                                    
                                     <ul class="header__subnav" id="sub_nav">
+                                        <li>
+                                            <a>
+                                                <button class="header__sublink" id="button_back">
+                                                    <i class="arrow_left"></i>
+                                                </button>back
+                                            </a>
+                                        </li>
                                         <li>
                                             <a href="#" class="header__sublink">One page</a>
                                         </li>
