@@ -1,46 +1,46 @@
 "use strict";
 
-let burgerElem = document.getElementById('header_burger');
-let cartElem = document.getElementById('cart');
-let menuElem = document.getElementById('header_menu');
-let bodyElem = document.getElementById('body');
-let cartListElem = document.getElementById('cart_list');
-let featuresElem = document.getElementById('button_submenu');
-let submenuElem = document.getElementById('submenu');
-let subElem = document.getElementById('sub_nav');
-let headerListElem = document.getElementById('header_list'); 
-let buttonElem = document.getElementById('button_back');
+let burgerElement = document.getElementById('header_burger');
+let cartElement = document.getElementById('cart');
+let menuElement = document.getElementById('header_menu');
+let bodyElement = document.getElementById('body');
+let cartListElement = document.getElementById('cart_list');
+let featuresElement = document.getElementById('button_submenu');
+let submenuElement = document.getElementById('submenu');
+let subElement = document.getElementById('sub_nav');
+let headerListElement = document.getElementById('header_list'); 
+let buttonElement = document.getElementById('button_back');
 
-burgerElem.addEventListener('click', function (event) {
-    burgerElem.classList.toggle('active');
-    menuElem.classList.toggle('active');
-    bodyElem.classList.toggle('lock');
-    submenuElem.classList.toggle('active');
-    if (subElem.classList.contains('active')) {
-        menuElem.classList.remove('active');
-        subElem.classList.remove('active');
+burgerElement.addEventListener('click', function (event) {
+    burgerElement.classList.toggle('active');
+    menuElement.classList.toggle('active');
+    bodyElement.classList.toggle('lock');
+    submenuElement.classList.toggle('active');
+    if (subElement.classList.contains('active')) {
+        menuElement.classList.remove('active');
+        subElement.classList.remove('active');
     }
 });
 
-cartElem.addEventListener('click', function (event) {
-    cartListElem.classList.toggle('active');
+cartElement.addEventListener('click', function (event) {
+    cartListElement.classList.toggle('active');
 });
 
-featuresElem.addEventListener('click', function (event) {
-    menuElem.classList.remove('active');
-    subElem.classList.toggle('active');
+featuresElement.addEventListener('click', function (event) {
+    menuElement.classList.remove('active');
+    subElement.classList.toggle('active');
 });
 
-submenuElem.addEventListener('click', function (event) {
-   if (!submenuElem.classList.contains('active')) {
-        subElem.classList.toggle('active');
-        menuElem.classList.remove('active');
+submenuElement.addEventListener('click', function (event) {
+   if (!submenuElement.classList.contains('active')) {
+        subElement.classList.toggle('active');
+        menuElement.classList.remove('active');
    };
 });
 
-buttonElem.addEventListener('click', function (event) {
-    menuElem.classList.toggle('active');
-    subElem.classList.toggle('active');
+buttonElement.addEventListener('click', function (event) {
+    menuElement.classList.toggle('active');
+    subElement.classList.toggle('active');
 });
 
 
