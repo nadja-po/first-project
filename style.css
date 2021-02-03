@@ -108,11 +108,11 @@ html, body {
     z-index: 2;
     padding: 0 5px 0 0;
 }
-.header__cartlist {
-    display: none;
-}
 .header__cartlist.active {
-    display: block;  
+    display: block;
+}
+.header__cartlist {
+    display: none;  
     position: relative;
     right: 50px;
     z-index: 2;
@@ -164,11 +164,11 @@ html, body {
     width: 15px;
     height: 15px;
 }
-.header__subnav {
-    display: none;
-}
 .header__subnav.active {
-    display: block;  
+    display: block;
+}
+.header__subnav {
+    display: none;  
     position: absolute;
     left: -20px;
     z-index: 2;
@@ -196,7 +196,7 @@ html, body {
 .content {
     padding: 100px 0 0;
 }
-@media (max-width: 900px){
+@media (max-width: 768px){
     .header__logo {
         flex: 0 0 40px;
     }
@@ -298,7 +298,7 @@ html, body {
         height: 43px;
         line-height: 45px;
     }
-    .header__sublinkbutton {
+    .header__sublink-button {
         height: 40px;
         width: 40px;
         background-color: var(--main-bg-color);  
