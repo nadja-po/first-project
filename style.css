@@ -163,11 +163,11 @@ html, body {
     list-style: none;
     margin: 0 0 10px;
     border-top: 2px solid var(--main-border-color);  
-    padding: 7px 10px 0 10px;
+    padding: 7px 10px 0;
     line-height: 35px;
 }
 .header__list li:first-child {
-    border-top: 0px;
+    border-top: none;
 }
 body.lock {
     overflow: hidden;
@@ -193,7 +193,6 @@ body.lock {
     font-size: 12px;
     text-decoration: none;  
     color: var(--main-color);
-    font-family: var(--main-title-font);
     font-weight: bold;
     text-align: center;
 }
@@ -242,7 +241,6 @@ body.lock {
     letter-spacing: 1px;
     text-decoration: none;  
     color: var(--main-color);
-    font-family: var(--main-title-font);
     font-weight: bold;
 }
 .header__sublink-button {
@@ -283,7 +281,7 @@ body.lock {
 @media (min-width: 768px){
     .header__menu {
         position: relative;
-        padding: 0 0;
+        padding: 0;
         overflow: visible;
     }
     .header__burger {

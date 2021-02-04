@@ -10,16 +10,20 @@ const submenuElement = document.getElementById('submenu');
 const subElement = document.getElementById('sub_nav');
 const headerListElement = document.getElementById('header_list'); 
 const buttonElement = document.getElementById('button_back');
+let menuIsActive = false;
+let submenuIsActive = false;
 
 burgerElement.addEventListener('click', function (event) {
     burgerElement.classList.toggle('active');
     menuElement.classList.toggle('active');
     bodyElement.classList.toggle('lock');
     submenuElement.classList.toggle('active');
-    if (subElement.classList.contains('active')) {
+    if (menuIsActive == true) {
         menuElement.classList.remove('active');
         subElement.classList.remove('active');
     }
+    menuIsActive = !menuIsActive;
+    submenuIsActive = !submenuIsActive;
 });
 
 cartElement.addEventListener('click', function (event) {
@@ -32,7 +36,7 @@ featuresElement.addEventListener('click', function (event) {
 });
 
 submenuElement.addEventListener('click', function (event) {
-   if (!submenuElement.classList.contains('active')) {
+   if (submenuIsActive == false) {
         subElement.classList.toggle('active');
         menuElement.classList.remove('active');
    };
