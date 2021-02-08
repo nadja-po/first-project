@@ -70,7 +70,8 @@ for (let i = 0; i < images1.length; i++) {
 }
 
 let step = 0;
-
+let carouselTextObject = document.createElement('div');
+carouselTextObject = carouselText;
 
 function draw() {
     let objectImg1 = document.createElement('object');
@@ -81,6 +82,7 @@ function draw() {
     objectDiv1.classList.add('carousel__object1');
     objectDiv1.style.left = "0%";
     objectDiv1.appendChild(objectImg1);
+    objectDiv1.appendChild(carouselTextObject);
     document.querySelector('.carousel__images').appendChild(objectDiv1);
     console.log(objectDiv1);
 
