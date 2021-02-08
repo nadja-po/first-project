@@ -291,6 +291,7 @@ body.lock {
     top: 50%;
     left: 10%;
     text-align: left;
+    
     z-index: 20;
 }
 .carousel__text1 {
@@ -306,8 +307,15 @@ body.lock {
 .carousel__images {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 150vw;
     overflow: hidden;
+}
+.carousel__object1 {
+    position: absolute;
+    transition: all ease 0.5s;
+    width: 100%;
+    left: 0;
+    top: 0;
 }
 .carousel__object {
     position: absolute;

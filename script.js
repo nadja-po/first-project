@@ -64,38 +64,53 @@ for (let i = 0; i < images.length; i++) {
     slider[i] = images[i].data;
     images[i].remove();
 }
+let images1 = document.querySelectorAll('.carousel__object1');
+for (let i = 0; i < images1.length; i++) {
+    images1[i].remove();
+}
 
 let step = 0;
-draw();
+
 
 function draw() {
     let objectImg1 = document.createElement('object');
     objectImg1.data = slider[0];
     objectImg1.classList.add('carousel__object');
-    objectImg1.style.left = 0 + "%";
+    //objectImg1.style.left = 0 + "%";
     let objectDiv1 = document.createElement('div');
-    //objectImg1.nodeValue.appendChild(carouselText);
-    document.querySelector('.carousel__images').appendChild(objectImg1);
-    console.log(objectImg1);
+    objectDiv1.classList.add('carousel__object1');
+    objectDiv1.style.left = "0%";
+    objectDiv1.appendChild(objectImg1);
+    document.querySelector('.carousel__images').appendChild(objectDiv1);
+    console.log(objectDiv1);
 
     let objectImg2 = document.createElement('object');
     objectImg2.data = slider[1];
     objectImg2.classList.add('carousel__object');
-    objectImg2.style.left = 100 + "%";
-    document.querySelector('.carousel__images').appendChild(objectImg2);
-    console.log(objectImg2);
+    //objectImg2.style.left = 100 + "%";
+    let objectDiv2 = document.createElement('div');
+    objectDiv2.classList.add('carousel__object1');
+    objectDiv2.style.left = "100%";
+    objectDiv2.appendChild(objectImg2);
+    document.querySelector('.carousel__images').appendChild(objectDiv2);
+    console.log(objectDiv2);
 
     let objectImg3 = document.createElement('object');
     objectImg3.data = slider[2];
     objectImg3.classList.add('carousel__object');
-    objectImg3.style.left = -100 + "%";
-    document.querySelector('.carousel__images').appendChild(objectImg3);
-    console.log(objectImg3);
+    //objectImg3.style.left = -100 + "%";
+    let objectDiv3 = document.createElement('div');
+    objectDiv3.classList.add('carousel__object1');
+    objectDiv3.style.left = "-100%";
+    objectDiv3.appendChild(objectImg3);
+    document.querySelector('.carousel__images').appendChild(objectDiv3);
+    console.log(objectDiv3);
 };
+draw();
 
-
-let images2 =  Array.from(document.querySelectorAll('.carousel__images object'));
-
+//let images2 =  Array.from(document.querySelectorAll('.carousel__images object1'));
+let images2 =  Array.from(document.querySelectorAll('.carousel__object1'));
+console.log(images2);
 function drawRight() {
     let objectImg = document.createElement('object');
     let k;
@@ -111,9 +126,14 @@ function drawRight() {
 
     objectImg.data = slider[k];
     objectImg.classList.add('carousel__object');
-    objectImg.style.left = "100%";
-    document.querySelector('.carousel__images').appendChild(objectImg);
-    images2.push(objectImg);
+    //objectImg.style.left = "100%";
+    //document.querySelector('.carousel__images').appendChild(objectImg);
+    let objectDiv = document.createElement('div');
+    objectDiv.classList.add('carousel__object1');
+    objectDiv.style.left = "100%";
+    objectDiv.appendChild(objectImg);
+    document.querySelector('.carousel__images').appendChild(objectDiv);
+    images2.push(objectDiv);
   
     if (step + 1 == slider.length){
         step = 0;
@@ -137,9 +157,14 @@ function drawLeft() {
     }
     objectImg.data = slider[k];
     objectImg.classList.add('carousel__object');
-    objectImg.style.left = "-100%";
-    images2.push(objectImg);
-    document.querySelector('.carousel__images').appendChild(objectImg);
+    //objectImg.style.left = "-100%";
+    //document.querySelector('.carousel__images').appendChild(objectImg);
+    let objectDiv = document.createElement('div');
+    objectDiv.classList.add('carousel__object1');
+    objectDiv.style.left = "-100%";
+    objectDiv.appendChild(objectImg);
+    document.querySelector('.carousel__images').appendChild(objectDiv);
+    images2.push(objectDiv);
     if (step == 0) {
         step = slider.length - 1;
     }
