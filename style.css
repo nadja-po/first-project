@@ -12,9 +12,10 @@
 }   
 :root {
     --main-bg-color: #ffffff;   
+    --element-color: #f8f2f2;
     --main-color: #000000;
     --main-border-color: #d3d3d3;
-    --main-hover-color: #a0522d;
+    --additional-color: #8a4221;
     --arrow-color: #808080;
     --logo-font: 'Pacifico', cursive;
     --main-title-font: 'Poppins', sans-serif;
@@ -187,7 +188,7 @@ body.lock {
     cursor: pointer;
 }
 .header__link:hover, .header__cartlink:hover, .header__sublink:hover {
-    color: var(--main-hover-color);
+    color: var(--additional-color);
 }
 .header__cartlink {
     font-size: 12px;
@@ -198,6 +199,7 @@ body.lock {
 }
 .form-search {
     display: block;
+    position: relative;
 }
 .form-search input {
     all: unset;
@@ -259,7 +261,7 @@ body.lock {
     font-size: 20px;
     float: right;
 }
-.arrow_left {
+.arrow-left {
     border: solid var(--arrow-color);
     border-width: 0 2px 2px 0;
     display: inline-block;
@@ -267,7 +269,7 @@ body.lock {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
-.arrow_right {
+.arrow-right {
     border: solid var(--arrow-color);
     border-width: 0 2px 2px 0;
     display: inline-block;
@@ -278,6 +280,66 @@ body.lock {
 .content {
     padding: 70px 0 0;
 }
+.carousel {
+    width: 100%;
+    height: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+.carousel__text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    text-align: left;
+    z-index: 20;
+}
+.carousel__text1 {
+    color: var(--element-color);
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+.carousel__text2 {
+    color: var(--additional-color);
+    font-size: 25px;
+    letter-spacing: 1.5px;
+}
+.carousel__images {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.carousel__object {
+    position: absolute;
+    transition: all ease 0.5s;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.carousel__buttons {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    background-color: transparent;
+    z-index: 10;
+}
+.carousel__button-left:focus, .carousel__button-right:focus {
+    outline: none;
+    border: 4px solid var(--element-color);
+}
+.carousel__button-left, .carousel__button-right {
+    height: 60px;
+    width: 60px; 
+    border: 3px solid var(--element-color);  
+    background-color: transparent;
+    margin-right: 10px;
+}
+.arrow_carousel {
+    padding: 6px;
+    border: solid var(--element-color);
+    border-width: 0 3px 3px 0;
+}
+
 @media (min-width: 768px){
     .header__menu {
         position: relative;
