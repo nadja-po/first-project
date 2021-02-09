@@ -63,73 +63,51 @@ for (let i = 0; i < images.length; i++) {
     slider[i] = images[i].data;
     images[i].remove();
 }
-let images1 = document.querySelectorAll('.carousel__box');
-for (let i = 0; i < images1.length; i++) {
-    images1[i].remove();
+let boxes = document.querySelectorAll('.carousel__box');
+for (let i = 0; i < boxes.length; i++) {
+    boxes[i].remove();
 }
 
 let carouselTextObject = document.createElement('div');
 carouselTextObject = carouselText;
 
 let step = 0;
+let carousel =  Array.from(document.querySelectorAll('.carousel__box'));
+
+function carouselObject (position, left) {
+    let objectDiv = document.createElement('div');
+    let objectImg = document.createElement('object');
+    objectImg.data = slider[position];
+    objectImg.classList.add('carousel__object');
+    objectDiv.classList.add('carousel__box');
+    objectDiv.style.left = left;
+    if (position == 0) {
+        objectDiv.appendChild(carouselTextObject);
+    }
+    objectDiv.appendChild(objectImg);
+    document.querySelector('.carousel').appendChild(objectDiv);
+    carousel.push(objectDiv);
+}
 
 function draw() {
-    let objectImg1 = document.createElement('object');
-    objectImg1.data = slider[0];
-    objectImg1.classList.add('carousel__object');
-    let objectDiv1 = document.createElement('div');
-    objectDiv1.classList.add('carousel__box');
-    objectDiv1.style.left = "0%";
-    objectDiv1.appendChild(objectImg1);
-    objectDiv1.appendChild(carouselTextObject);
-    document.querySelector('.carousel').appendChild(objectDiv1);
-
-    let objectImg2 = document.createElement('object');
-    objectImg2.data = slider[1];
-    objectImg2.classList.add('carousel__object');
-    let objectDiv2 = document.createElement('div');
-    objectDiv2.classList.add('carousel__box');
-    objectDiv2.style.left = "100%";
-    objectDiv2.appendChild(objectImg2);
-    document.querySelector('.carousel').appendChild(objectDiv2);
-
-    let objectImg3 = document.createElement('object');
-    objectImg3.data = slider[2];
-    objectImg3.classList.add('carousel__object');
-    let objectDiv3 = document.createElement('div');
-    objectDiv3.classList.add('carousel__box');
-    objectDiv3.style.left = "-100%";
-    objectDiv3.appendChild(objectImg3);
-    document.querySelector('.carousel').appendChild(objectDiv3);
-
+    carouselObject (0, "0%");
+    carouselObject (1, "100%");
+    carouselObject (2, "-100%");
 };
 draw();
 
-let images2 =  Array.from(document.querySelectorAll('.carousel__box'));
-
 function drawRight() {
-    let objectImg = document.createElement('object');
-    let k;
+    let position;
     if (step == 0) {
-        k = 2;
+        position = 2;
     }
     else if (step == 1) {
-        k = 0;
+        position = 0;
     }
     else if (step == 2) {
-        k = 1;
+        position = 1;
     }
-    objectImg.data = slider[k];
-    objectImg.classList.add('carousel__object');
-    let objectDiv = document.createElement('div');
-    objectDiv.classList.add('carousel__box');
-    objectDiv.style.left = "100%";
-    objectDiv.appendChild(objectImg);
-    if (k == 0) {
-        objectDiv.appendChild(carouselTextObject);
-    }
-    document.querySelector('.carousel').appendChild(objectDiv);
-    images2.push(objectDiv);
+    carouselObject (position, "100%");
     if (step + 1 == slider.length){
         step = 0;
     }
@@ -139,28 +117,17 @@ function drawRight() {
 };
 
 function drawLeft() {
-    let objectImg = document.createElement('object');
-    let k;
+    let position;
     if (step == 0) {
-        k = 1;
+        position = 1;
     }
     else if (step == 1) {
-        k = 2;
+        position = 2;
     }
     else if (step == 2) {
-        k = 0;
+        position = 0;
     }
-    objectImg.data = slider[k];
-    objectImg.classList.add('carousel__object');
-    let objectDiv = document.createElement('div');
-    objectDiv.classList.add('carousel__box');
-    objectDiv.style.left = "-100%";
-    objectDiv.appendChild(objectImg);
-    if (k == 0) {
-        objectDiv.appendChild(carouselTextObject);
-    }
-    document.querySelector('.carousel').appendChild(objectDiv);
-    images2.push(objectDiv);
+    carouselObject(position, "-100%");
     if (step == 0) {
         step = slider.length - 1;
     }
@@ -173,17 +140,17 @@ function move(direction) {
     if (direction == 'right') {
         buttonRight.disabled = true;
         buttonLeft.disabled = true;
-        for (let i = 0; i < images2.length; i++) {
-            if (images2[i].style.left == "-100%") {
-                images2[i].remove();
+        for (let i = 0; i < carousel.length; i++) {
+            if (carousel[i].style.left == "-100%") {
+                carousel[i].remove();
             }
         }
-        for (let i = 0; i < images2.length; i++) {
-            if (images2[i].style.left == "0%") {
-                images2[i].style.left = "-100%";
+        for (let i = 0; i < carousel.length; i++) {
+            if (carousel[i].style.left == "0%") {
+                carousel[i].style.left = "-100%";
             }
             else {
-                images2[i].style.left = "0%";
+                carousel[i].style.left = "0%";
             }
         }
         setTimeout(function(){
@@ -195,17 +162,17 @@ function move(direction) {
     else {
         buttonRight.disabled = true;
         buttonLeft.disabled = true;
-        for (let i = 0; i < images2.length; i++) {
-            if (images2[i].style.left == "100%") {
-                images2[i].remove();
+        for (let i = 0; i < carousel.length; i++) {
+            if (carousel[i].style.left == "100%") {
+                carousel[i].remove();
             }
         }
-        for (let i = 0; i < images2.length; i++) {
-            if (images2[i].style.left == "0%") {
-                images2[i].style.left = "100%";
+        for (let i = 0; i < carousel.length; i++) {
+            if (carousel[i].style.left == "0%") {
+                carousel[i].style.left = "100%";
             }
             else {
-                images2[i].style.left = "0%";
+                carousel[i].style.left = "0%";
             }
         }
         setTimeout(function(){

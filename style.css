@@ -268,7 +268,6 @@ body.lock {
     display: inline-block;
     padding: 4px;
     transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
 }
 .arrow-right {
     border: solid var(--arrow-color);
@@ -276,14 +275,13 @@ body.lock {
     display: inline-block;
     padding: 4px;
     transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
 }
 .content {
     padding: 70px 0 0;
 }
 .carousel__text {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 10%;
     text-align: left;
     display: active;
@@ -309,7 +307,6 @@ body.lock {
     position: absolute;
     transition: 0.5s;
     width: 100vw;
-    
 }
 .carousel__object {
     width: 100vw;
@@ -323,10 +320,6 @@ body.lock {
     background-color: transparent;
     z-index: 10;
 }
-.carousel__button-left:focus, .carousel__button-right:focus {
-    outline: none;
-    border: 4px solid var(--element-color);
-}
 .carousel__button-left, .carousel__button-right {
     height: 60px;
     width: 60px; 
@@ -338,6 +331,27 @@ body.lock {
     padding: 6px;
     border: solid var(--element-color);
     border-width: 0 3px 3px 0;
+}
+.about-part {
+    margin: 30px 10px;  
+    height: 100%;
+}
+.img-container {
+    position: relative;
+}
+.img1 {
+    position: absolute;
+    left: 0;
+    top: 140px;
+    z-index: 10;
+}
+.img2 {
+    position: absolute;
+    right: 0; 
+    top: 0; 
+}
+.text-container {
+    
 }
 
 @media (min-width: 768px){
