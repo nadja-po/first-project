@@ -89,14 +89,15 @@ html, body {
 }
 .header__container {
     display: flex;
+    padding: 0 10px;
 }
 .header__menu {
     position: fixed;
     top: -100%;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
-    padding: 70px 10px 20px;
+    padding: 70px 10px 20px 5px;
     background-color: var(--main-bg-color);  
     transition: 0.5s;
     overflow: auto;
@@ -213,7 +214,7 @@ body.lock {
 .header__subnav {
     display: none;  
     position: absolute;
-    padding: 10px 10px 10px;
+    padding: 10px 10px 10px 5px;
     width: 100%;
     height: 240px;
     top: 50px;
@@ -280,12 +281,6 @@ body.lock {
 .content {
     padding: 70px 0 0;
 }
-.carousel {
-    width: 100%;
-    height: 100%;
-    margin: 20px auto;
-    text-align: center;
-}
 .carousel__text {
     position: absolute;
     top: 55%;
@@ -304,20 +299,20 @@ body.lock {
     font-size: 25px;
     letter-spacing: 1.5px;
 }
-.carousel__images {
+.carousel {
     position: relative;
     width: 100vw;
     height: 150vw;
     overflow: hidden;
 }
-.carousel__object1 {
+.carousel__box {
     position: absolute;
     transition: 0.5s;
-    width: 100%;
+    width: 100vw;
     
 }
 .carousel__object {
-    width: 100%;
+    width: 100vw;
     left: 0;
     top: 0;
 }
