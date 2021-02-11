@@ -18,7 +18,7 @@ burgerElement.addEventListener('click', function (event) {
     menuElement.classList.toggle('active');
     bodyElement.classList.toggle('lock');
     submenuElement.classList.toggle('active');
-    if (menuIsActive == true) {
+    if (menuIsActive === true) {
         menuElement.classList.remove('active');
         subElement.classList.remove('active');
     }
@@ -36,7 +36,7 @@ featuresElement.addEventListener('click', function (event) {
 });
 
 submenuElement.addEventListener('click', function (event) {
-   if (submenuIsActive == false) {
+   if (submenuIsActive === false) {
         subElement.classList.toggle('active');
         menuElement.classList.remove('active');
    };

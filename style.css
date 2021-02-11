@@ -167,7 +167,7 @@ html, body {
     line-height: 35px;
 }
 .header__list li:first-child {
-    border-top: none;
+    border-top: 0;
 }
 body.lock {
     overflow: hidden;
