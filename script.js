@@ -1,17 +1,50 @@
 "use strict";
 
-let burgerElem = document.getElementById('header_burger');
-let cartElem = document.getElementById('cart');
-let menuElem = document.getElementById('header_menu');
-let bodyElem = document.getElementById('body');
-let cartListElem = document.getElementById('cart_list');
+const burgerElement = document.getElementById('header_burger');
+const cartElement = document.getElementById('cart');
+const menuElement = document.getElementById('header_menu');
+const bodyElement = document.getElementById('body');
+const cartListElement = document.getElementById('cart_list');
+const featuresElement = document.getElementById('button_submenu');
+const submenuElement = document.getElementById('submenu');
+const subElement = document.getElementById('sub_nav');
+const headerListElement = document.getElementById('header_list'); 
+const buttonElement = document.getElementById('button_back');
+let menuIsActive = false;
+let submenuIsActive = false;
 
-burgerElem.addEventListener('click', function (event) {
-    burgerElem.classList.toggle('active');
-    menuElem.classList.toggle('active');
-    bodyElem.classList.toggle('lock');
+burgerElement.addEventListener('click', function (event) {
+    burgerElement.classList.toggle('active');
+    menuElement.classList.toggle('active');
+    bodyElement.classList.toggle('lock');
+    submenuElement.classList.toggle('active');
+    if (menuIsActive === true) {
+        menuElement.classList.remove('active');
+        subElement.classList.remove('active');
+    }
+    menuIsActive = !menuIsActive;
+    submenuIsActive = !submenuIsActive;
 });
 
-cartElem.addEventListener('click', function (event) {
-    cartListElem.classList.toggle('active');
-})
+cartElement.addEventListener('click', function (event) {
+    cartListElement.classList.toggle('active');
+});
+
+featuresElement.addEventListener('click', function (event) {
+    menuElement.classList.remove('active');
+    subElement.classList.toggle('active');
+});
+
+submenuElement.addEventListener('click', function (event) {
+   if (submenuIsActive === false) {
+        subElement.classList.toggle('active');
+        menuElement.classList.remove('active');
+   };
+});
+
+buttonElement.addEventListener('click', function (event) {
+    menuElement.classList.toggle('active');
+    subElement.classList.toggle('active');
+});
+
+

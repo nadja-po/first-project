@@ -15,8 +15,8 @@
                     </a>
                     <div class="header__container">
                         <div class="header__cart" id="header_cart">
-                            <nav class="header__basket" id="cart">
-                                <img src="/icons/cart.svg"/>
+                            <nav class="header__basket">
+                                <img id="cart" src="/icons/cart.svg"/>
                                 <ul class="header__cartlist" id="cart_list">
                                     <li>
                                         <a href="#" class="header__cartlink">$44.50</a>
@@ -35,7 +35,13 @@
                             <span></span>
                         </div>
                         <nav class="header__menu" id="header_menu">
-                            <ul class="header__list">
+                            <ul class="header__list" id="header_list">
+                                <li>
+                                    <form class="form-search">
+                                        <input type="search" name="text" required placeholder="Search...">
+                                        <input type="image" src="/icons/search.svg">
+                                    </form>
+                                </li>
                                 <li>
                                     <a href="#" class="header__link">home</a>
                                 </li>
@@ -46,13 +52,34 @@
                                     <a href="#" class="header__link">menu</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="header__link">reservation</a>
+                                    <a href="#" class="header__link">reservations</a>
                                 </li>
                                 <li>
                                     <a href="#" class="header__link">blog</a>
                                 </li>
                                 <li>
-                                    <a href="" class="header__link">features</a>
+                                    <a class="header__link" id="submenu">features</a>
+                                        <button class="header__link-button" id="button_submenu">
+                                            <div class="arrow_right"></div>
+                                        </button>
+                                    <ul class="header__subnav" id="sub_nav">
+                                        <li>
+                                            <a>
+                                                <button class="header__sublink-button" id="button_back">
+                                                    <div class="arrow_left"></div>
+                                                </button>back
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="header__sublink">One page</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="header__sublink">Portfolio</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="header__sublink">Shortcodes</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li>
                                     <a href="#" class="header__link">shop</a>
