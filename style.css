@@ -39,8 +39,8 @@ html, body {
     top: 0;
     left: 0;
     z-index: 50;
-    position: fixed; 
-    background-color: var(--main-bg-color);   
+    position: fixed !important; 
+    background-color: var(--main-bg-color); 
 }
 .header:before {
     content: '';
@@ -219,7 +219,7 @@ body.lock {
     height: 240px;
     top: 50px;
     left: 0;
-    background-color: var(--main-bg-color);  
+    background-color: var(--main-bg-color);
 }
 .header__subnav.active {
     display: block;
@@ -277,7 +277,7 @@ body.lock {
     transform: rotate(-45deg);
 }
 .content {
-    padding: 70px 0 0;
+    margin: 70px 0 0;
 }
 .carousel__text {
     position: absolute;
@@ -333,11 +333,12 @@ body.lock {
     border-width: 0 3px 3px 0;
 }
 .about-part {
+    position: static;
     margin: 30px 10px;  
-    height: 100%;
 }
-.img-container {
+.about-part__img-container {
     position: relative;
+    height: 330px;
 }
 .img1 {
     position: absolute;
@@ -347,11 +348,26 @@ body.lock {
 }
 .img2 {
     position: absolute;
-    right: 0; 
+    right: 5px; 
     top: 0; 
 }
-.text-container {
-    
+.title {
+    font-size: 35px;
+    letter-spacing: 8px;
+}
+.subtitle {
+    color: var(--additional-color);
+    font-family: var(--main-text-font);
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+p {
+    text-size-adjust: auto;
+    font-family: var(--main-title-font);
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    line-height: 2.5;
 }
 
 @media (min-width: 768px){
@@ -359,6 +375,7 @@ body.lock {
         position: relative;
         padding: 0;
         overflow: visible;
+        width: unset;
     }
     .header__burger {
         display: none;
@@ -403,8 +420,67 @@ body.lock {
         display: none;
     }
     .content {
-        padding: 50px 0 0;
+        padding: 0 0;
     } 
+    .carousel__text {
+        top: 20%;
+        left: 3%;
+    }
+    .carousel__text1 {
+        color: var(--element-color);
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+    .carousel__text2 {
+        color: var(--additional-color);
+        font-size: 25px;
+        letter-spacing: 1.5px;
+    }
+    .carousel {
+        position: static; 
+        width: 100vw;
+        height: auto;
+        overflow: visible;
+    }
+    .carousel__box {
+        position: static;
+        display: inline;
+    }
+    .carousel__object {
+        width: 32%;
+        margin: 0 1px;
+    }
+    .carousel__buttons {
+        display: none;
+    }
+    .about-part {
+        position: relative; 
+        height: auto;
+    }
+    .img1 {
+        position: absolute;
+        left: 10%;
+        top: 140px;
+        z-index: 10;
+    }
+    .img2 {
+        position: absolute;
+        right: 60%; 
+        top: 0; 
+    }
+    .about-part__text-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        margin-right: 50px;
+    }
+    p {
+        text-size-adjust: auto;
+        font-family: var(--main-title-font);
+        font-size: 10px;
+        letter-spacing: 1px;
+        line-height: 2;
+    }
 }
 
 

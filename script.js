@@ -97,42 +97,26 @@ function draw() {
 draw();
 
 function drawRight() {
-    let position;
-    if (step == 0) {
-        position = 2;
-    }
-    else if (step == 1) {
-        position = 0;
-    }
-    else if (step == 2) {
-        position = 1;
+    let position = step - 1;
+    if (position < 0) {
+        position = slider.length - 1;
     }
     carouselObject (position, "100%");
-    if (step + 1 == slider.length){
+    step++;
+    if (step == slider.length) {
         step = 0;
-    }
-    else {
-        step++;
     }
 };
 
 function drawLeft() {
-    let position;
-    if (step == 0) {
-        position = 1;
-    }
-    else if (step == 1) {
-        position = 2;
-    }
-    else if (step == 2) {
+    let position = step + 1;
+    if (position == slider.length) {
         position = 0;
     }
     carouselObject(position, "-100%");
-    if (step == 0) {
+    step--;
+    if (step < 0) {
         step = slider.length - 1;
-    }
-    else {
-        step--;
     }
 };
 
@@ -154,7 +138,7 @@ function move(direction) {
             }
         }
         setTimeout(function(){
-            drawRight();
+            drawRight(); 
             buttonRight.disabled = false;
             buttonLeft.disabled = false;
         }, 500);
