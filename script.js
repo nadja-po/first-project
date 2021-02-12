@@ -81,7 +81,7 @@ function carouselObject (position, left) {
     objectImg.classList.add('carousel__object');
     objectDiv.classList.add('carousel__box');
     objectDiv.style.left = left;
-    if (position == 0) {
+    if (position === 0) {
         objectDiv.appendChild(carouselTextObject);
     }
     objectDiv.appendChild(objectImg);
@@ -103,14 +103,14 @@ function drawRight() {
     }
     carouselObject (position, "100%");
     step++;
-    if (step == slider.length) {
+    if (step === slider.length) {
         step = 0;
     }
 };
 
 function drawLeft() {
     let position = step + 1;
-    if (position == slider.length) {
+    if (position === slider.length) {
         position = 0;
     }
     carouselObject(position, "-100%");
@@ -121,23 +121,23 @@ function drawLeft() {
 };
 
 function move(direction) {
-    if (direction == 'right') {
+    if (direction === 'right') {
         buttonRight.disabled = true;
         buttonLeft.disabled = true;
         for (let i = 0; i < carousel.length; i++) {
-            if (carousel[i].style.left == "-100%") {
+            if (carousel[i].style.left === "-100%") {
                 carousel[i].remove();
             }
         }
         for (let i = 0; i < carousel.length; i++) {
-            if (carousel[i].style.left == "0%") {
+            if (carousel[i].style.left === "0%") {
                 carousel[i].style.left = "-100%";
             }
             else {
                 carousel[i].style.left = "0%";
             }
         }
-        setTimeout(function(){
+        setTimeout(function() {
             drawRight(); 
             buttonRight.disabled = false;
             buttonLeft.disabled = false;
@@ -147,19 +147,19 @@ function move(direction) {
         buttonRight.disabled = true;
         buttonLeft.disabled = true;
         for (let i = 0; i < carousel.length; i++) {
-            if (carousel[i].style.left == "100%") {
+            if (carousel[i].style.left === "100%") {
                 carousel[i].remove();
             }
         }
         for (let i = 0; i < carousel.length; i++) {
-            if (carousel[i].style.left == "0%") {
+            if (carousel[i].style.left === "0%") {
                 carousel[i].style.left = "100%";
             }
             else {
                 carousel[i].style.left = "0%";
             }
         }
-        setTimeout(function(){
+        setTimeout(function() {
             drawLeft();
             buttonRight.disabled = false;
             buttonLeft.disabled = false;
