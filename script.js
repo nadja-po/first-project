@@ -15,6 +15,8 @@ let submenuIsActive = false;
 const buttonRight = document.getElementById('button_right');
 const buttonLeft = document.getElementById('button_left');
 const carouselText = document.getElementById('carousel_text');
+const carouselBox = document.getElementById('carousel_box');
+const carouselElement = document.getElementById('carousel');
 
 burgerElement.addEventListener('click', function (event) {
     burgerElement.classList.toggle('active');
@@ -51,29 +53,24 @@ buttonElement.addEventListener('click', function (event) {
 });
 
 buttonRight.addEventListener('click', function (){
-    move('right');
+    moveCarouselSlides('right');
 }); 
 buttonLeft.addEventListener('click', function (){
-    move('left');
+    moveCarouselSlides('left');
 });
 
-let images = document.querySelectorAll('.carousel object');
+let images = carouselBox.children;
 let slider = [];
-for (let i = 0; i < images.length; i++) {
+for (let i = images.length-1; i >= 0; i--) {
     slider[i] = images[i].data;
     images[i].remove();
 }
-let boxes = document.querySelectorAll('.carousel__box');
-for (let i = 0; i < boxes.length; i++) {
-    boxes[i].remove();
-}
 
-let carouselTextObject = document.createElement('div');
+let carouselTextObject = document.createDocumentFragment();
 carouselTextObject = carouselText;
 
 let step = 0;
-let carousel =  Array.from(document.querySelectorAll('.carousel__box'));
-
+let carousel = Array.from(carouselBox.children);
 function carouselObject (position, left) {
     let objectDiv = document.createElement('div');
     let objectImg = document.createElement('object');
@@ -85,18 +82,18 @@ function carouselObject (position, left) {
         objectDiv.appendChild(carouselTextObject);
     }
     objectDiv.appendChild(objectImg);
-    document.querySelector('.carousel').appendChild(objectDiv);
+    carouselElement.appendChild(objectDiv);
     carousel.push(objectDiv);
 }
 
-function draw() {
+function drawCarouselSlides() {
     carouselObject (0, "0%");
     carouselObject (1, "100%");
-    carouselObject (2, "-100%");
+    carouselObject (slider.length - 1, "-100%");
 };
-draw();
+drawCarouselSlides();
 
-function drawRight() {
+function drawCarouselSlideRight() {
     let position = step - 1;
     if (position < 0) {
         position = slider.length - 1;
@@ -108,7 +105,7 @@ function drawRight() {
     }
 };
 
-function drawLeft() {
+function drawCarouselSlideLeft() {
     let position = step + 1;
     if (position === slider.length) {
         position = 0;
@@ -119,11 +116,19 @@ function drawLeft() {
         step = slider.length - 1;
     }
 };
-
-function move(direction) {
-    if (direction === 'right') {
+function changesButtonsStatusDisable(disable) {
+    if (disable === true) {
         buttonRight.disabled = true;
         buttonLeft.disabled = true;
+    }
+    else {
+        buttonRight.disabled = false;
+        buttonLeft.disabled = false;
+    }
+}
+function moveCarouselSlides (direction) {
+    if (direction === 'right') {
+        changesButtonsStatusDisable(true);
         for (let i = 0; i < carousel.length; i++) {
             if (carousel[i].style.left === "-100%") {
                 carousel[i].remove();
@@ -138,14 +143,12 @@ function move(direction) {
             }
         }
         setTimeout(function() {
-            drawRight(); 
-            buttonRight.disabled = false;
-            buttonLeft.disabled = false;
+            drawCarouselSlideRight(); 
+            changesButtonsStatusDisable(false);
         }, 500);
     }
     else {
-        buttonRight.disabled = true;
-        buttonLeft.disabled = true;
+        changesButtonsStatusDisable(true);
         for (let i = 0; i < carousel.length; i++) {
             if (carousel[i].style.left === "100%") {
                 carousel[i].remove();
@@ -160,9 +163,8 @@ function move(direction) {
             }
         }
         setTimeout(function() {
-            drawLeft();
-            buttonRight.disabled = false;
-            buttonLeft.disabled = false;
+            drawCarouselSlideLeft();
+            changesButtonsStatusDisable(false);
         }, 500);
     }
 }
