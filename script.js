@@ -59,12 +59,12 @@ buttonLeft.addEventListener('click', function (){
     moveCarouselSlides('left');
 });
 
-let images = carouselBox.children;
+let images = Array.from(carouselBox.children);
 let slider = [];
-for (let i = images.length-1; i >= 0; i--) {
-    slider[i] = images[i].data;
-    images[i].remove();
-}
+images.forEach(function(item, i, images) {
+    slider[i] = images[i].data; 
+    item.remove();
+}); 
 
 let carouselTextObject = document.createDocumentFragment();
 carouselTextObject = carouselText;
