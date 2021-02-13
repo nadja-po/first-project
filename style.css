@@ -16,7 +16,7 @@
     --light-gray-color: #f3efe6;
     --main-color: #000000;
     --main-border-color: #d3d3d3;
-    --additional-color: #8a4221;
+    --brown-color: #8a4221;
     --arrow-color: #808080;
     --logo-font: 'Pacifico', cursive;
     --main-title-font: 'Poppins', sans-serif;
@@ -190,7 +190,7 @@ body.lock {
     cursor: pointer;
 }
 .header__link:hover, .header__cartlink:hover, .header__sublink:hover {
-    color: var(--additional-color);
+    color: var(--brown-color);
 }
 .header__cartlink {
     font-size: 3.7vw;
@@ -302,9 +302,9 @@ body.lock {
     letter-spacing: 3px;
 }
 .carousel__subtitle {
-    color: var(--additional-color);
+    color: var(--brown-color);
     font-size: 8vw;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 }
 .carousel__box {
     position: absolute;
@@ -320,7 +320,6 @@ body.lock {
     position: absolute;
     top: 70%;
     left: 8%;
-    background-color: #FFFFFF00;
     z-index: 10;
 }
 .carousel__button-left, .carousel__button-right {
@@ -362,18 +361,19 @@ body.lock {
     letter-spacing: 8px;
 }
 .subtitle {
-    color: var(--additional-color);
+    color: var(--brown-color);
     font-family: var(--main-text-font);
     font-size: 3.5vw;
     letter-spacing: 1px;
     text-transform: uppercase;
+    padding: 10px 0;
 }
-p {
+.about-part__text-container_text {
     text-size-adjust: auto;
     font-family: var(--main-title-font);
     font-size: 3.5vw; 
-    letter-spacing: 2.5px; 
-    line-height: 2.5;
+    letter-spacing: 2px; 
+    line-height: 2.2;
 }
 .gallery-part {
     background-color: var(--light-gray-color);
@@ -422,8 +422,8 @@ p {
     .header__burger {
         display: none;
     }
-    .header__link, .header__sublink, .header__cartlink, .subtitle, p {
-        font-size: 12px;
+    .header__link, .header__sublink, .header__cartlink, .subtitle, .about-part__text-container_text {
+        font-size: 1.3vw;
     }
     .header__list {
         display: flex;  
@@ -440,7 +440,7 @@ p {
     }
     .form-search input {
         all: unset;
-        font-size: 10px;
+        font-size: 1.3vw;
         letter-spacing: 2px;
         width: 80%;
     }
@@ -472,13 +472,12 @@ p {
     }
     .carousel__title {
         color: var(--light-gray-color);
-        font-size: 28px;
+        font-size: 3vw;
         letter-spacing: 3px;
     }
     .carousel__subtitle {
-        color: var(--additional-color);
-        font-size: 25px;
-        letter-spacing: 1.5px;
+        color: var(--brown-color);
+        font-size: 2.7vw;
     }
     .carousel {
         position: static; 
@@ -515,7 +514,7 @@ p {
         width: 50%;
     }
     .title {
-        font-size: 35px;
+        font-size: 4vw;
     }
     .gallery-part {
         background-color: var(--light-gray-color);
