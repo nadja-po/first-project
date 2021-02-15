@@ -182,7 +182,7 @@ body.lock {
 }
 .header__link {
     text-transform: uppercase;
-    font-size: 4vw;
+    font-size: 3.5vw;
     letter-spacing: 1px;
     text-decoration: none;
     color: var(--main-color);
@@ -193,7 +193,7 @@ body.lock {
     color: var(--brown-color);
 }
 .header__cartlink {
-    font-size: 3.7vw;
+    font-size: 3.5vw;
     text-decoration: none;  
     color: var(--main-color);
     font-weight: bold;
@@ -205,7 +205,7 @@ body.lock {
 }
 .form-search input {
     all: unset;
-    font-size: 4vw;
+    font-size: 3.5vw;
     width: 90%;
 }
 .form-search input[type="image"] {
@@ -234,14 +234,14 @@ body.lock {
     display: block;
     padding-right: 10px;
     text-transform: uppercase;
-    font-size: 4vw;
+    font-size: 3.5vw;
     letter-spacing: 1px;
     text-align: right;
     height: 43px;
     line-height: 45px;
 }
 .header__sublink {
-    font-size: 4vw;
+    font-size: 3.5vw;
     letter-spacing: 1px;
     text-decoration: none;  
     color: var(--main-color);
@@ -356,13 +356,13 @@ body.lock {
 }
 .title {
     font-size: 11vw;
-    letter-spacing: 8px;
+    letter-spacing: 2vw;
 }
 .subtitle {
     color: var(--brown-color);
     font-family: var(--main-text-font);
     font-size: 3.5vw;
-    letter-spacing: 1px;
+    letter-spacing: 0.2vw;
     text-transform: uppercase;
     padding: 10px 0;
 }
@@ -370,7 +370,7 @@ body.lock {
     text-size-adjust: auto;
     font-family: var(--main-title-font);
     font-size: 3.5vw; 
-    letter-spacing: 2px; 
+    letter-spacing: 0.4vw; 
     line-height: 2.2;
 }
 .gallery-part {
@@ -439,7 +439,7 @@ body.lock {
     .form-search input {
         all: unset;
         font-size: 1vw;
-        letter-spacing: 2px;
+        letter-spacing: 0.4vw;
         width: 80%;
     }
     .header__subnav {
@@ -471,7 +471,7 @@ body.lock {
     .carousel__title {
         color: var(--light-gray-color);
         font-size: 3vw;
-        letter-spacing: 3px;
+        letter-spacing: 0.7vw;
     }
     .carousel__subtitle {
         color: var(--brown-color);
@@ -512,7 +512,7 @@ body.lock {
         width: 50%;
     }
     .title {
-        font-size: 4vw;
+        font-size: 3.5vw;
     }
     .gallery-part {
         background-color: var(--light-gray-color);
