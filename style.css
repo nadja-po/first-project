@@ -306,8 +306,19 @@ body.lock {
 }
 .carousel__box {
     position: absolute;
-    transition: 0.5s;
     width: 100vw;
+}
+.carousel__box.middle {
+    transition: 0.5s;
+    left: 0%;
+}
+.carousel__box.left {
+    transition: 0.5s;
+    left: -100%;
+}
+.carousel__box.right {
+    transition: 0.5s;
+    left: 100%;
 }
 .carousel__object {
     width: 100vw;

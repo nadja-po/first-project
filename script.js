@@ -52,17 +52,10 @@ buttonElement.addEventListener('click', function (event) {
     subElement.classList.toggle('active');
 });
 
-/* buttonRight.addEventListener('click', function (){
-    moveCarouselSlides('right');
-}); 
-buttonLeft.addEventListener('click', function (){
-    moveCarouselSlides('left');
-}); */
-
 let images = Array.from(carouselBox.children);
 let slider = [];
 images.forEach(function(item, i, images) {
-    slider[i] = images[i].data; 
+    slider[i] = images[i].src; 
     item.remove();
 }); 
 
@@ -71,13 +64,13 @@ carouselTextObject = carouselText;
 
 let step = 0;
 let carousel = Array.from(carouselBox.children);
-function carouselObject (position, left) {
+function carouselObject (position, location) {
     let objectDiv = document.createElement('div');
-    let objectImg = document.createElement('object');
-    objectImg.data = slider[position];
+    let objectImg = document.createElement('img');
+    objectImg.src = slider[position];
     objectImg.classList.add('carousel__object');
     objectDiv.classList.add('carousel__box');
-    objectDiv.style.left = left;
+    objectDiv.classList.add(location);
     if (position === 0) {
         objectDiv.appendChild(carouselTextObject);
     }
@@ -85,12 +78,12 @@ function carouselObject (position, left) {
     carouselElement.appendChild(objectDiv);
     carousel.push(objectDiv);
 }
-
 function drawCarouselSlides() {
-    carouselObject (0, "0%");
-    carouselObject (1, "100%");
-    carouselObject (slider.length - 1, "-100%");
-};
+    carouselObject(0, 'middle');
+    carouselObject(1, 'right');
+    carouselObject (slider.length - 1, 'left');
+}
+
 drawCarouselSlides();
 
 function drawCarouselSlideRight() {
@@ -98,7 +91,7 @@ function drawCarouselSlideRight() {
     if (position < 0) {
         position = slider.length - 1;
     }
-    carouselObject (position, "100%");
+    carouselObject (position, 'right');
     step++;
     if (step === slider.length) {
         step = 0;
@@ -110,7 +103,7 @@ function drawCarouselSlideLeft() {
     if (position === slider.length) {
         position = 0;
     }
-    carouselObject(position, "-100%");
+    carouselObject(position, 'left');
     step--;
     if (step < 0) {
         step = slider.length - 1;
@@ -129,16 +122,16 @@ function changesButtonsStatusDisable(disable) {
 buttonRight.addEventListener('click', function (){
     changesButtonsStatusDisable(true);
     carousel.forEach(function(item, i, images) { 
-        if (carousel[i].style.left === "-100%") {
+        if (carousel[i].className === 'carousel__box left'){
             carousel[i].remove();
         }
     })
     carousel.forEach(function(item, i, images) {
-        if (carousel[i].style.left === "0%") {
-            carousel[i].style.left = "-100%";
+        if (carousel[i].className === 'carousel__box middle') {
+            carousel[i].className = 'carousel__box left';
         }
         else {
-            carousel[i].style.left = "0%";
+            carousel[i].className = 'carousel__box middle';
         }
     })
     setTimeout(function() {
@@ -149,16 +142,16 @@ buttonRight.addEventListener('click', function (){
 buttonLeft.addEventListener('click', function (){
     changesButtonsStatusDisable(true);
     carousel.forEach(function(item, i, images) {
-        if (carousel[i].style.left === "100%") {
+        if (carousel[i].className === 'carousel__box right') {
             carousel[i].remove();
         }
     })
     carousel.forEach(function(item, i, images) {
-        if (carousel[i].style.left === "0%") {
-            carousel[i].style.left = "100%";
+        if (carousel[i].className === 'carousel__box middle') {
+            carousel[i].className = 'carousel__box right';
         }
         else {
-            carousel[i].style.left = "0%";
+            carousel[i].className = 'carousel__box middle';
         }
     })
     setTimeout(function() {
