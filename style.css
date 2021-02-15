@@ -117,7 +117,7 @@ html, body {
     content: '';
     position: absolute;
     width: 100%;
-    height: 2.5px;
+    height: 2px;
     left: 0;
     background-color: var(--main-color);
 }
@@ -337,6 +337,7 @@ body.lock {
     border: 3px solid var(--light-gray-color);  
     background-color: unset;
     margin-right: 10px;
+    outline: none;
 }
 .arrow_carousel {
     padding: 6px;
@@ -479,15 +480,6 @@ body.lock {
         top: 15%;
         left: 3%;
     }
-   /*  .carousel__title {
-        color: var(--light-gray-color);
-        font-size: 3vw;
-        letter-spacing: 0.7vw;
-    }
-    .carousel__subtitle {
-        color: var(--brown-color);
-        font-size: 2.7vw;
-    } */
     .carousel {
         position: static; 
         width: 100vw;

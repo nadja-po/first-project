@@ -71,6 +71,7 @@ function carouselObject (position, location) {
     objectImg.classList.add('carousel__object');
     objectDiv.classList.add('carousel__box');
     objectDiv.classList.add(location);
+
     if (position === 0) {
         objectDiv.appendChild(carouselTextObject);
     }
@@ -83,7 +84,6 @@ function drawCarouselSlides() {
     carouselObject(1, 'right');
     carouselObject (slider.length - 1, 'left');
 }
-
 drawCarouselSlides();
 
 function drawCarouselSlideRight() {
@@ -109,18 +109,21 @@ function drawCarouselSlideLeft() {
         step = slider.length - 1;
     }
 };
-function changesButtonsStatusDisable(disable) {
-    if (disable === true) {
-        buttonRight.disabled = true;
-        buttonLeft.disabled = true;
-    }
-    else {
-        buttonRight.disabled = false;
-        buttonLeft.disabled = false;
+
+function throttle (callback, limit) {
+    var waiting = false;                     
+    return function () {                                     
+         if (!waiting) {                   
+            callback.apply(this, arguments);  
+            waiting = true;                   
+            setTimeout(function () {          
+                waiting = false;             
+            }, limit);
+        }
     }
 }
-buttonRight.addEventListener('click', function (){
-    changesButtonsStatusDisable(true);
+
+buttonRight.addEventListener('click', throttle(function (){
     carousel.forEach(function(item, i, images) { 
         if (carousel[i].className === 'carousel__box left'){
             carousel[i].remove();
@@ -134,13 +137,10 @@ buttonRight.addEventListener('click', function (){
             carousel[i].className = 'carousel__box middle';
         }
     })
-    setTimeout(function() {
-        drawCarouselSlideRight(); 
-        changesButtonsStatusDisable(false);
-    }, 500);
-})
-buttonLeft.addEventListener('click', function (){
-    changesButtonsStatusDisable(true);
+    drawCarouselSlideRight();
+}, 500));
+
+buttonLeft.addEventListener('click', throttle(function (){
     carousel.forEach(function(item, i, images) {
         if (carousel[i].className === 'carousel__box right') {
             carousel[i].remove();
@@ -154,9 +154,6 @@ buttonLeft.addEventListener('click', function (){
             carousel[i].className = 'carousel__box middle';
         }
     })
-    setTimeout(function() {
-        drawCarouselSlideLeft();
-        changesButtonsStatusDisable(false);
-    }, 500);
-})
+    drawCarouselSlideLeft();
+}, 500));
 
