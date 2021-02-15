@@ -52,12 +52,12 @@ buttonElement.addEventListener('click', function (event) {
     subElement.classList.toggle('active');
 });
 
-buttonRight.addEventListener('click', function (){
+/* buttonRight.addEventListener('click', function (){
     moveCarouselSlides('right');
 }); 
 buttonLeft.addEventListener('click', function (){
     moveCarouselSlides('left');
-});
+}); */
 
 let images = Array.from(carouselBox.children);
 let slider = [];
@@ -126,45 +126,44 @@ function changesButtonsStatusDisable(disable) {
         buttonLeft.disabled = false;
     }
 }
-function moveCarouselSlides (direction) {
-    if (direction === 'right') {
-        changesButtonsStatusDisable(true);
-        for (let i = 0; i < carousel.length; i++) {
-            if (carousel[i].style.left === "-100%") {
-                carousel[i].remove();
-            }
+buttonRight.addEventListener('click', function (){
+    changesButtonsStatusDisable(true);
+    carousel.forEach(function(item, i, images) { 
+        if (carousel[i].style.left === "-100%") {
+            carousel[i].remove();
         }
-        for (let i = 0; i < carousel.length; i++) {
-            if (carousel[i].style.left === "0%") {
-                carousel[i].style.left = "-100%";
-            }
-            else {
-                carousel[i].style.left = "0%";
-            }
+    })
+    carousel.forEach(function(item, i, images) {
+        if (carousel[i].style.left === "0%") {
+            carousel[i].style.left = "-100%";
         }
-        setTimeout(function() {
-            drawCarouselSlideRight(); 
-            changesButtonsStatusDisable(false);
-        }, 500);
-    }
-    else {
-        changesButtonsStatusDisable(true);
-        for (let i = 0; i < carousel.length; i++) {
-            if (carousel[i].style.left === "100%") {
-                carousel[i].remove();
-            }
+        else {
+            carousel[i].style.left = "0%";
         }
-        for (let i = 0; i < carousel.length; i++) {
-            if (carousel[i].style.left === "0%") {
-                carousel[i].style.left = "100%";
-            }
-            else {
-                carousel[i].style.left = "0%";
-            }
+    })
+    setTimeout(function() {
+        drawCarouselSlideRight(); 
+        changesButtonsStatusDisable(false);
+    }, 500);
+})
+buttonLeft.addEventListener('click', function (){
+    changesButtonsStatusDisable(true);
+    carousel.forEach(function(item, i, images) {
+        if (carousel[i].style.left === "100%") {
+            carousel[i].remove();
         }
-        setTimeout(function() {
-            drawCarouselSlideLeft();
-            changesButtonsStatusDisable(false);
-        }, 500);
-    }
-}
+    })
+    carousel.forEach(function(item, i, images) {
+        if (carousel[i].style.left === "0%") {
+            carousel[i].style.left = "100%";
+        }
+        else {
+            carousel[i].style.left = "0%";
+        }
+    })
+    setTimeout(function() {
+        drawCarouselSlideLeft();
+        changesButtonsStatusDisable(false);
+    }, 500);
+})
+
