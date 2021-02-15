@@ -111,7 +111,7 @@ function drawCarouselSlideLeft() {
 };
 
 function throttle (callback, limit) {
-    var waiting = false;                     
+    let waiting = false;                     
     return function () {                                     
          if (!waiting) {                   
             callback.apply(this, arguments);  
