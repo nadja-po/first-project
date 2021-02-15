@@ -155,7 +155,7 @@ html, body {
     position: relative;
     right: 50px;
     padding: 20px 10px 10px;
-    width: 125px;
+    width: 100px;
     background-color: var(--main-bg-color);  
     box-sizing: content-box;
 }
@@ -182,7 +182,7 @@ body.lock {
 }
 .header__link {
     text-transform: uppercase;
-    font-size: 3.5vw;
+    font-size: 12px;
     letter-spacing: 1px;
     text-decoration: none;
     color: var(--main-color);
@@ -193,7 +193,7 @@ body.lock {
     color: var(--brown-color);
 }
 .header__cartlink {
-    font-size: 3.5vw;
+    font-size: 12px;
     text-decoration: none;  
     color: var(--main-color);
     font-weight: bold;
@@ -205,7 +205,7 @@ body.lock {
 }
 .form-search input {
     all: unset;
-    font-size: 3.5vw;
+    font-size: 12px;
     width: 90%;
 }
 .form-search input[type="image"] {
@@ -234,14 +234,14 @@ body.lock {
     display: block;
     padding-right: 10px;
     text-transform: uppercase;
-    font-size: 3.5vw;
+    font-size: 12px;
     letter-spacing: 1px;
     text-align: right;
     height: 43px;
     line-height: 45px;
 }
 .header__sublink {
-    font-size: 3.5vw;
+    font-size: 12px;
     letter-spacing: 1px;
     text-decoration: none;  
     color: var(--main-color);
@@ -288,7 +288,7 @@ body.lock {
 }
 .carousel__text {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 8%;
     text-align: left;
     display: active;
@@ -296,12 +296,12 @@ body.lock {
 }
 .carousel__title {
     color: var(--light-gray-color);
-    font-size: 9vw;
+    font-size: 27px;
     letter-spacing: 3px;
 }
 .carousel__subtitle {
     color: var(--brown-color);
-    font-size: 8vw;
+    font-size: 22px;
     letter-spacing: 2px;
 }
 .carousel__box {
@@ -355,22 +355,22 @@ body.lock {
     height: 150px;
 }
 .title {
-    font-size: 11vw;
-    letter-spacing: 2vw;
+    font-size: 32px;
+    letter-spacing: 8px;
 }
 .subtitle {
     color: var(--brown-color);
     font-family: var(--main-text-font);
-    font-size: 3.5vw;
-    letter-spacing: 0.2vw;
+    font-size: 12px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     padding: 10px 0;
 }
 .about-part__text-container_text {
     text-size-adjust: auto;
     font-family: var(--main-title-font);
-    font-size: 3.5vw; 
-    letter-spacing: 0.4vw; 
+    font-size: 12px; 
+    letter-spacing: 2px; 
     line-height: 2.2;
 }
 .gallery-part {
@@ -421,7 +421,7 @@ body.lock {
         display: none;
     }
     .header__link, .header__sublink, .header__cartlink, .subtitle, .about-part__text-container_text {
-        font-size: 1vw;
+        font-size: 12px;
     }
     .header__list {
         display: flex;  
@@ -438,8 +438,8 @@ body.lock {
     }
     .form-search input {
         all: unset;
-        font-size: 1vw;
-        letter-spacing: 0.4vw;
+        font-size: 12px;
+        letter-spacing: 2px;
         width: 80%;
     }
     .header__subnav {
@@ -468,7 +468,7 @@ body.lock {
         top: 15%;
         left: 3%;
     }
-    .carousel__title {
+   /*  .carousel__title {
         color: var(--light-gray-color);
         font-size: 3vw;
         letter-spacing: 0.7vw;
@@ -476,7 +476,7 @@ body.lock {
     .carousel__subtitle {
         color: var(--brown-color);
         font-size: 2.7vw;
-    }
+    } */
     .carousel {
         position: static; 
         width: 100vw;
@@ -512,7 +512,7 @@ body.lock {
         width: 50%;
     }
     .title {
-        font-size: 3.5vw;
+        font-size: 35px;
     }
     .gallery-part {
         background-color: var(--light-gray-color);
