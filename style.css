@@ -383,7 +383,7 @@ body.lock {
     font-family: var(--main-title-font);
     font-size: 12px; 
     letter-spacing: 2px; 
-    line-height: 2.2;
+    line-height: 26px;
 }
 .gallery-part {
     background-color: var(--light-gray-color);
