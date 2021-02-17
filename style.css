@@ -96,7 +96,7 @@ html, body {
     position: fixed;
     top: -100%;
     left: 0;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     padding: 70px 10px 20px 5px;
     background-color: var(--main-bg-color);  
@@ -282,7 +282,7 @@ body.lock {
 }
 .carousel {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 140vw;
     overflow: hidden;
 }
@@ -490,7 +490,7 @@ body.lock {
         display: inline;
     }
     .carousel__object {
-        width: 32%;
+        width: 33%;
         margin: 0 1px;
     }
     .carousel__buttons {

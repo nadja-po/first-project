@@ -23,8 +23,8 @@ carouselTextObject = carouselText;
 
 let images = Array.from(carouselBox.children);
 let slider = [];
-images.forEach(function(item, i, images) {
-    slider[i] = images[i].src; 
+images.forEach(function(item, images) {
+    slider.push(item.src); 
     item.remove();
 }); 
 
@@ -89,7 +89,7 @@ function throttle (callback, limit) {
     }
 }
 
-buttonRight.addEventListener('click', throttle(function (){
+function moveCarouselSlideRight(){
     carousel.forEach(function(item, images) { 
         if (item.className === 'carousel__box left'){
             item.remove();
@@ -104,9 +104,10 @@ buttonRight.addEventListener('click', throttle(function (){
         }
     })
     drawCarouselSlideRight();
-}, 500));
+};
+moveCarouselSlideRight = throttle(moveCarouselSlideRight, 500);
 
-buttonLeft.addEventListener('click', throttle(function (){
+function moveCarouselSlideLeft(){
     carousel.forEach(function(item, images) {
         if (item.className === 'carousel__box right') {
             item.remove();
@@ -121,7 +122,11 @@ buttonLeft.addEventListener('click', throttle(function (){
         }
     })
     drawCarouselSlideLeft();
-}, 500));
+};
+moveCarouselSlideLeft = throttle(moveCarouselSlideLeft, 500);
+
+buttonRight.addEventListener('click', moveCarouselSlideRight);
+buttonLeft.addEventListener('click', moveCarouselSlideLeft);
 
 burgerElement.addEventListener('click', function (event) {
     burgerElement.classList.toggle('active');
