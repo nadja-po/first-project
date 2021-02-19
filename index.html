@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="style.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>img[alt="www.000webhost.com"] {display: none;}</style>
     </head>
     <body id="body">
         <header class="header">
@@ -16,7 +17,7 @@
                     <div class="header__container">
                         <div class="header__cart" id="header_cart">
                             <nav class="header__basket">
-                                <img id="cart" src="/icons/cart.svg"/>
+                                <img id="cart" src="/images/cart.svg"/>
                                 <ul class="header__cartlist" id="cart_list">
                                     <li>
                                         <a href="#" class="header__cartlink">$44.50</a>
@@ -39,7 +40,7 @@
                                 <li>
                                     <form class="form-search">
                                         <input type="search" name="text" required placeholder="Search...">
-                                        <input type="image" src="/icons/search.svg">
+                                        <input type="image" src="/images/search.svg"/>
                                     </form>
                                 </li>
                                 <li>
@@ -60,13 +61,13 @@
                                 <li>
                                     <a class="header__link" id="submenu">features</a>
                                         <button class="header__link-button" id="button_submenu">
-                                            <div class="arrow_right"></div>
+                                            <div class="arrow-right"></div>
                                         </button>
                                     <ul class="header__subnav" id="sub_nav">
                                         <li>
                                             <a>
                                                 <button class="header__sublink-button" id="button_back">
-                                                    <div class="arrow_left"></div>
+                                                    <div class="arrow-left"></div>
                                                 </button>back
                                             </a>
                                         </li>
@@ -95,13 +96,58 @@
         </header>
         <main>
             <div class="content">
-                <img src="/images/carousel_img_1.png"/>
-                <img src="/images/carousel_img_2.png"/>
-                <img src="/images/carousel_img_3.png"/>
-            </div>
+                <div class="carousel" id="carousel">
+                    <div class="carousel__text" id="carousel_text">
+                        <div class="carousel__title">made with love</div>
+                        <div class="carousel__subtitle">for you</div> 
+                    </div>
+                    <div id="carousel_box">
+                        <img class="carousel__object" src="/images/carousel_img_1.png"/>
+                        <img class="carousel__object" src="/images/carousel_img_2.png"/>
+                        <img class="carousel__object" src="/images/carousel_img_3.png"/>
+                    </div>
+                    <div class="carousel__buttons">
+                        <button class="carousel__button-left" id="button_left">
+                            <div class="arrow-left arrow_carousel"></div>
+                        </button>
+                        <button class="carousel__button-right" id="button_right">
+                            <div class="arrow-right arrow_carousel"></div>
+                        </button>
+                    </div>
+                </div>
+                <div class="about-part">
+                    <div class="about-part__img-container">
+                        <div class="about-part__img-container_img1"><img src="/images/about_img_1.png"/></div>
+                        <div class="about-part__img-container_img2"><img src="/images/about_img_2.png"/></div>
+                    </div>
+                    <div class="about-part__text-container">
+                        <p class='title'>about</p>
+                        <p class='subtitle'>we create delicious memories</p>
+                        <p class='about-part__text-container_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nibh purus, vestibulum at finibus ut, porta vel odio. Curabitur vitae elit sollicitudin, suscipit urna in, bibendum enim. Mauris blandit consequat elit, ac laoreet augue sodales nec. Aliquam venenatis purus a enim molestie fringilla. Mauris ac nibh ligula. Phasellus vulputate vel neque nec convallis. Vestibulum egestas mattis nulla eget auctor. Sed ac tortor ante. Quisque nec neque tellus.</p>
+                    </div>
+                </div>
+                <div class="gallery-part">
+                    <p class='title'>gallery</p>
+                    <p class='subtitle'>more about us via photos</p>
+                    <div class="gallery-part__photos">
+                        <img src="/images/gallery_img_1.png"/>
+                        <img src="/images/gallery_img_2.png"/>
+                        <img src="/images/gallery_img_3.png"/>
+                        <img src="/images/gallery_img_4.png"/>
+                        <img src="/images/gallery_img_5.png"/>
+                        <img src="/images/gallery_img_6.png"/>
+                    </div>
+                </div>
         </main>
-        <footer>
-
+        <footer class="footer">
+            <p class='subtitle footer-subtitle'>follow us:</p>
+            <div class="footer__icons">
+                <a href="#"><img src="/images/facebook.svg"/></a>
+                <a href="#"><img src="/images/twitter.svg"/></a>
+                <a href="#"><img src="/images/google+.svg"/></a>
+            </div>
+            <h2 class="logo__text">Renome</h2>
+            <p class='subtitle footer-subtitle'>copyright 2015 renome by estetiq</p>
         </footer>
         <script src="script.js"></script>
     </body>
