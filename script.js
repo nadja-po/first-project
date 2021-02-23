@@ -9,27 +9,32 @@ const featuresElement = document.getElementById('button_submenu');
 const submenuElement = document.getElementById('submenu');
 const subElement = document.getElementById('sub_nav');
 const headerListElement = document.getElementById('header_list'); 
-const buttonElement = document.getElementById('button_back');
-let menuIsActive = false;
-let submenuIsActive = false;
+const backElement = document.getElementById('button_back');
 const buttonRight = document.getElementById('button_right');
 const buttonLeft = document.getElementById('button_left');
-const carouselText = document.getElementById('carousel_text');
+const carouselText1 = document.getElementById('carousel_text1');
+const carouselText2 = document.getElementById('carousel_text2');
+const carouselText3 = document.getElementById('carousel_text3');
 const carouselBox = document.getElementById('carousel_box');
 const carouselElement = document.getElementById('carousel');
 
-let carouselTextObject = document.createDocumentFragment();
-carouselTextObject = carouselText;
-
-let images = Array.from(carouselBox.children);
+let menuIsActive = false;
+let submenuIsActive = false;
+let step = 0;
+let carousel = Array.from(carouselBox.children);
 let slider = [];
-images.forEach(function(item, images) {
+let carouselTextObject1 = document.createDocumentFragment();
+carouselTextObject1 = carouselText1;
+let carouselTextObject2 = document.createDocumentFragment();
+carouselTextObject2 = carouselText2;
+let carouselTextObject3 = document.createDocumentFragment();
+carouselTextObject3 = carouselText3;
+
+carousel.forEach(function(item) {
     slider.push(item.src); 
     item.remove();
 }); 
 
-let step = 0;
-let carousel = Array.from(carouselBox.children);
 function carouselObject (position, location) {
     let objectDiv = document.createElement('div');
     let objectImg = document.createElement('img');
@@ -37,14 +42,22 @@ function carouselObject (position, location) {
     objectImg.classList.add('carousel__object');
     objectDiv.classList.add('carousel__box');
     objectDiv.classList.add(location);
-
-    if (position === 0) {
-        objectDiv.appendChild(carouselTextObject);
+    switch (position) {
+        case 0:
+            objectDiv.appendChild(carouselTextObject1);
+            break;
+        case 1:
+            objectDiv.appendChild(carouselTextObject2);
+            break;
+        case 2:
+            objectDiv.appendChild(carouselTextObject3);
+            break;
     }
     objectDiv.appendChild(objectImg);
     carouselElement.appendChild(objectDiv);
     carousel.push(objectDiv);
 }
+
 function drawCarouselSlides() {
     carouselObject(0, 'middle');
     carouselObject(1, 'right');
@@ -90,17 +103,19 @@ function throttle (callback, limit) {
 }
 
 function moveCarouselSlideRight(){
-    carousel.forEach(function(item, images) { 
-        if (item.className === 'carousel__box left'){
+    carousel.forEach(function(item) { 
+        if (item.classList.contains('left')){
             item.remove();
         }
     })
-    carousel.forEach(function(item, images) {
-        if (item.className === 'carousel__box middle') {
-            item.className = 'carousel__box left';
+    carousel.forEach(function(item) {
+        if (item.classList.contains('middle')) {
+            item.classList.remove('middle')
+            item.classList.add('left');
         }
         else {
-            item.className = 'carousel__box middle';
+            item.classList.remove('right')
+            item.classList.add('middle');
         }
     })
     drawCarouselSlideRight();
@@ -108,56 +123,79 @@ function moveCarouselSlideRight(){
 moveCarouselSlideRight = throttle(moveCarouselSlideRight, 500);
 
 function moveCarouselSlideLeft(){
-    carousel.forEach(function(item, images) {
-        if (item.className === 'carousel__box right') {
+    carousel.forEach(function(item) {
+        if (item.classList.contains('right')) {
             item.remove();
         }
     })
-    carousel.forEach(function(item, images) {
-        if (item.className === 'carousel__box middle') {
-            item.className = 'carousel__box right';
+    carousel.forEach(function(item) {
+        if (item.classList.contains('middle')) {
+            item.classList.remove('middle')
+            item.classList.add('right');
         }
         else {
-            item.className = 'carousel__box middle';
+            item.classList.remove('left')
+            item.classList.add('middle');
         }
     })
     drawCarouselSlideLeft();
 };
 moveCarouselSlideLeft = throttle(moveCarouselSlideLeft, 500);
 
-buttonRight.addEventListener('click', moveCarouselSlideRight);
-buttonLeft.addEventListener('click', moveCarouselSlideLeft);
-
-burgerElement.addEventListener('click', function (event) {
+function toggleMenu() {
     burgerElement.classList.toggle('active');
     menuElement.classList.toggle('active');
     bodyElement.classList.toggle('lock');
     submenuElement.classList.toggle('active');
+    cartListElement.classList.remove('active');
     if (menuIsActive === true) {
         menuElement.classList.remove('active');
         subElement.classList.remove('active');
     }
     menuIsActive = !menuIsActive;
     submenuIsActive = !submenuIsActive;
-});
+};
 
-cartElement.addEventListener('click', function (event) {
+function toggleCart() {
     cartListElement.classList.toggle('active');
-});
+    if (menuIsActive === true) {
+        menuElement.classList.remove('active');
+        subElement.classList.remove('active');
+        burgerElement.classList.remove('active');
+        bodyElement.classList.remove('lock');
+        menuIsActive = !menuIsActive;
+    }
+};
 
-featuresElement.addEventListener('click', function (event) {
+function toggleSubMenuMobile() {
     menuElement.classList.remove('active');
     subElement.classList.toggle('active');
-});
+    bodyElement.classList.remove('lock');
+};
 
-submenuElement.addEventListener('click', function (event) {
-   if (submenuIsActive === false) {
-        subElement.classList.toggle('active');
-        menuElement.classList.remove('active');
-   };
-});
-
-buttonElement.addEventListener('click', function (event) {
+function toggleSubMenuBack() {
     menuElement.classList.toggle('active');
     subElement.classList.toggle('active');
-});
+    bodyElement.classList.toggle('lock');
+};
+
+function toggleSubMenuDesctop() {
+    if (submenuIsActive === false) {
+         subElement.classList.toggle('active');
+         menuElement.classList.remove('active');
+    }
+    else {
+     menuElement.classList.remove('active');
+     subElement.classList.toggle('active');
+     bodyElement.classList.remove('lock');
+    }
+ };
+
+buttonRight.addEventListener('click', moveCarouselSlideRight);
+buttonLeft.addEventListener('click', moveCarouselSlideLeft);
+burgerElement.addEventListener('click', toggleMenu);
+cartElement.addEventListener('click', toggleCart);
+featuresElement.addEventListener('click', toggleSubMenuMobile)
+submenuElement.addEventListener('click', toggleSubMenuDesctop);
+backElement.addEventListener('click', toggleSubMenuBack);
+
