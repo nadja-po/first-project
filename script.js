@@ -148,6 +148,9 @@ function toggleMenu() {
     bodyElement.classList.toggle('lock');
     submenuElement.classList.toggle('active');
     cartListElement.classList.remove('active');
+    if (subElement.classList.contains('active')) {
+        bodyElement.classList.remove('lock');
+    }
     if (menuIsActive === true) {
         menuElement.classList.remove('active');
         subElement.classList.remove('active');
