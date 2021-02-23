@@ -134,7 +134,7 @@ html, body {
     left: 0;
     top: 9px;
     background-color: var(--main-color);
-    transition: 0.3s;
+    transition: transform 0.3s;
 }
 .header__burger.active:before {
     transform: rotate(45deg);
@@ -452,6 +452,8 @@ body.lock {
         border-top: none;  
         padding: 0;
         line-height: inherit;
+        display: flex;
+        align-items: center; 
     }
     .form-search input {
         all: unset;
