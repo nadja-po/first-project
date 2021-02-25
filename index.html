@@ -17,7 +17,7 @@
                     <div class="header__container">
                         <div class="header__cart" id="header_cart">
                             <nav class="header__basket">
-                                <img id="cart" src="/images/cart.svg"/>
+                                <img id="cart" src="/images/cart.svg" alt="basket"/>
                                 <ul class="header__cartlist" id="cart_list">
                                     <li>
                                         <a href="#" class="header__cartlink">$44.50</a>
@@ -40,7 +40,7 @@
                                 <li>
                                     <form class="form-search">
                                         <input type="search" name="text" required placeholder="Search...">
-                                        <input type="image" src="/images/search.svg"/>
+                                        <img class="form-search__img" src="/images/search.svg" alt="magnifying glass"/>
                                     </form>
                                 </li>
                                 <li>
@@ -59,17 +59,18 @@
                                     <a href="#" class="header__link">blog</a>
                                 </li>
                                 <li>
-                                    <a class="header__link" id="submenu">features</a>
-                                        <button class="header__link-button" id="button_submenu">
-                                            <div class="arrow-right"></div>
-                                        </button>
+                                    <div class="header__link" id="submenu">features</div>
+                                    <button class="header__link-button" id="button_submenu">
+                                        <div class="arrow-right"></div>
+                                    </button>
                                     <ul class="header__subnav" id="sub_nav">
                                         <li>
-                                            <a>
-                                                <button class="header__sublink-button" id="button_back">
+                                            <div id="button_back">
+                                                <button class="header__sublink-button">
                                                     <div class="arrow-left"></div>
-                                                </button>back
-                                            </a>
+                                                </button>
+                                                <div class="header__sublink">back</div>
+                                            </div>
                                         </li>
                                         <li>
                                             <a href="#" class="header__sublink">One page</a>
@@ -97,14 +98,22 @@
         <main>
             <div class="content">
                 <div class="carousel" id="carousel">
-                    <div class="carousel__text" id="carousel_text">
+                    <div class="carousel__text" id="carousel_text1">
+                        <div class="carousel__title">made with love</div>
+                        <div class="carousel__subtitle">for you</div> 
+                    </div>
+                    <div class="carousel__text" id="carousel_text2">
+                        <div class="carousel__title">made with love</div>
+                        <div class="carousel__subtitle">for you</div> 
+                    </div>
+                    <div class="carousel__text" id="carousel_text3">
                         <div class="carousel__title">made with love</div>
                         <div class="carousel__subtitle">for you</div> 
                     </div>
                     <div id="carousel_box">
-                        <img class="carousel__object" src="/images/carousel_img_1.png"/>
-                        <img class="carousel__object" src="/images/carousel_img_2.png"/>
-                        <img class="carousel__object" src="/images/carousel_img_3.png"/>
+                        <img class="carousel__object" src="/images/carousel_img_1.png" alt="carousel image 1"/>
+                        <img class="carousel__object" src="/images/carousel_img_2.png" alt="carousel image 2"/>
+                        <img class="carousel__object" src="/images/carousel_img_3.png" alt="carousel image 3"/>
                     </div>
                     <div class="carousel__buttons">
                         <button class="carousel__button-left" id="button_left">
@@ -117,8 +126,8 @@
                 </div>
                 <div class="about-part">
                     <div class="about-part__img-container">
-                        <div class="about-part__img-container_img1"><img src="/images/about_img_1.png"/></div>
-                        <div class="about-part__img-container_img2"><img src="/images/about_img_2.png"/></div>
+                        <div class="about-part__img-container_img1"><img src="/images/about_img_1.png" alt="about image 1"/></div>
+                        <div class="about-part__img-container_img2"><img src="/images/about_img_2.png" alt="about image 2"/></div>
                     </div>
                     <div class="about-part__text-container">
                         <p class='title'>about</p>
@@ -130,21 +139,21 @@
                     <p class='title'>gallery</p>
                     <p class='subtitle'>more about us via photos</p>
                     <div class="gallery-part__photos">
-                        <img src="/images/gallery_img_1.png"/>
-                        <img src="/images/gallery_img_2.png"/>
-                        <img src="/images/gallery_img_3.png"/>
-                        <img src="/images/gallery_img_4.png"/>
-                        <img src="/images/gallery_img_5.png"/>
-                        <img src="/images/gallery_img_6.png"/>
+                        <img src="/images/gallery_img_1.png" alt="gallery image 1"/>
+                        <img src="/images/gallery_img_2.png" alt="gallery image 2"/>
+                        <img src="/images/gallery_img_3.png" alt="gallery image 3"/>
+                        <img src="/images/gallery_img_4.png" alt="gallery image 4"/>
+                        <img src="/images/gallery_img_5.png" alt="gallery image 5"/>
+                        <img src="/images/gallery_img_6.png" alt="gallery image 6"/>
                     </div>
                 </div>
         </main>
         <footer class="footer">
             <p class='subtitle footer-subtitle'>follow us:</p>
             <div class="footer__icons">
-                <a href="#"><img src="/images/facebook.svg"/></a>
-                <a href="#"><img src="/images/twitter.svg"/></a>
-                <a href="#"><img src="/images/google+.svg"/></a>
+                <a href="#"><img src="/images/facebook.svg" alt="facebook icon"/></a>
+                <a href="#"><img src="/images/twitter.svg" alt="twitter icon"/></a>
+                <a href="#"><img src="/images/google+.svg" alt="google icon"/></a>
             </div>
             <h2 class="logo__text">Renome</h2>
             <p class='subtitle footer-subtitle'>copyright 2015 renome by estetiq</p>
